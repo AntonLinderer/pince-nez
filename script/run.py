@@ -686,7 +686,8 @@ def create_eyeglasses_from_svg(desired_width=135,
 
     setup_environment()
 
-    selected_object = bpy.context.scene.objects.active
+    # selected_object = bpy.context.scene.objects.active # blender 2.79
+    selected_object = bpy.context.active_object # blender 2.80
 
     create_mesh_from_svg(selected_object, desired_width, desired_thickness)
 
